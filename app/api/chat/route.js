@@ -52,14 +52,14 @@ export async function POST(request) {
 
   } catch (error) {
     console.error('Error en webhook:', error);
-    // Respuesta de fallback — nunca dejamos al cliente sin respuesta
+    // DEBUG TEMPORAL: mostrar error real
     return Response.json({
       version: 'v2',
       content: {
         messages: [
           {
             type: 'text',
-            text: 'Ups, tuve un problema técnico 😅 Podés escribirnos directamente al (0341) 587-9288 o al 341-282-1311 por WhatsApp.'
+            text: `DEBUG ERROR: ${error?.message || String(error)}`
           }
         ]
       }
