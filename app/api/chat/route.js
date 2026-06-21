@@ -52,14 +52,13 @@ export async function POST(request) {
 
   } catch (error) {
     console.error('Error en webhook:', error);
-    // DEBUG TEMPORAL: mostrar error real
     return Response.json({
       version: 'v2',
       content: {
         messages: [
           {
             type: 'text',
-            text: `DEBUG ERROR: ${error?.message || String(error)}`
+            text: 'Disculpá, tuve un problema técnico. ¿Podés repetir tu consulta?'
           }
         ]
       }
