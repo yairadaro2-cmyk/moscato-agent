@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { runAgent } from '@/lib/agent.js';
 import { getHistory, saveHistory, clearHistory } from '@/lib/history.js';
 
